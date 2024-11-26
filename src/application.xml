@@ -15,10 +15,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
     <aop:config>
         <aop:aspect ref="performanceTimingAdvice">
             <aop:around method="performTimingMeasurement"
-                        pointcut="execution(* com.yrgo.services..*.*(..))"/>
-
-			<aop:around method="performTimingMeasurement"
-						pointcut="execution(* com.yrgo.dataaccess.*.*(..))"/>
+                        pointcut="execution(* com.yrgo.services..*.*(..)) || execution(* com.yrgo.dataaccess.*.*(..))"/>
         </aop:aspect>
     </aop:config>
 
